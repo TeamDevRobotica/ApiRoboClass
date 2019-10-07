@@ -1,6 +1,6 @@
 import { JsonController, Param, Body, Get, Post, Put, Delete } from "routing-controllers";
 import { getRepository } from "typeorm";
-import { Docente } from "../entity/docente/Docente";
+import { Docente } from "../modelo/docente/Docente";
 
 @JsonController()
 export class DocenteControlador {
@@ -18,13 +18,13 @@ export class DocenteControlador {
     }
 
     @Post("/docente")
-    post(@Body() docente: Docente) {
+    post(@Body() docente: any) {
         return this.docenteRepositorio.save(docente);
     }
 
     @Put("/docente/:id")
-    put(@Param("id") id: number, @Body() docente: Docente) {
-        return /* this.docenteRepositorio.updateById(id, docente) */;
+    put(@Param("id") id: number, @Body() docente: any) {
+        return /* this.docenteRepositorio.updateById(id, docente)*/;
     }
 
     @Delete("/docente/:id")
