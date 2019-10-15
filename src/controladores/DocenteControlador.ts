@@ -32,5 +32,4 @@ export class DocenteControlador {
         let docente = await this.docenteRepositorio.findOne(id);
         return this.docenteRepositorio.remove(docente);
     }
-
 }

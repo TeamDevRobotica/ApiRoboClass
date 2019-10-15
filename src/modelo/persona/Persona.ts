@@ -19,5 +19,4 @@ export abstract class Persona extends Identidad {
     @OneToOne(type => Usuario)
     @JoinColumn()
     usuario: Usuario;
-
 }

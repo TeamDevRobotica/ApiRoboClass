@@ -4,7 +4,6 @@ import { Docente } from "../docente/Docente";
 
 @Entity()
 export class Institucion extends Identidad {
-
     @Column()
     descripcion: string;
 
