@@ -10,7 +10,7 @@ export class Docente extends Persona {
 
     @OneToMany(type => CursoCreado, cursosCreados => cursosCreados.docente)
     cursosCreados: CursoCreado[]; //lista de cursos creados por el docente
-
+    
     //@OneToMany(type => Docente, docentes => docentes.institucion)
     //docentes: Docente[];
 }

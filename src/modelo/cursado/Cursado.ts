@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 import { Estudiante } from "../estudiante/Estudiante";
+import { CursoCreado } from "../cursoCreado/CursoCreado";
 
 
 @Entity()
@@ -10,9 +11,9 @@ export class Cursado {
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     fechaInscripcion: Date;
 
-    @ManyToOne(type => Estudiante, estudiante => estudiante.cursado, {cascade:true})
+    @ManyToOne(type => Estudiante, estudiante => estudiante.cursados, {cascade:true})
     estudiante: Estudiante;
 
-    //@Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-    //fechaCreacion: Date;
+    @ManyToOne(type => CursoCreado, cursoCreado => cursoCreado.cursados)
+    cursoCreado: CursoCreado;
 }
