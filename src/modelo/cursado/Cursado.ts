@@ -2,16 +2,10 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from "ty
 import { Estudiante } from "../estudiante/Estudiante";
 import { CursoCreado } from "../cursoCreado/CursoCreado";
 import { Respuesta } from "../respuesta/Respuesta";
-
+import { Identidad } from "../comun/Identidad";
 
 @Entity()
-export class Cursado {
-    @PrimaryGeneratedColumn()
-    id: number;
-
-    @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-    fechaInscripcion: Date;
-
+export class Cursado extends Identidad{
     @ManyToOne(type => Estudiante, estudiante => estudiante.cursados, {cascade:true})
     estudiante: Estudiante;
 

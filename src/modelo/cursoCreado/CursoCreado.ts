@@ -2,12 +2,10 @@ import { Entity, OneToMany, ManyToOne, PrimaryGeneratedColumn, Column } from "ty
 import { Docente } from "../docente/Docente";
 import { Cursado } from "../cursado/Cursado";
 import { Curso } from "../curso/Curso";
+import { Identidad } from "../comun/Identidad";
 
 @Entity()
-export class CursoCreado {
-    @PrimaryGeneratedColumn()
-    id: number;
-
+export class CursoCreado extends Identidad{
     @Column()
     descripcion: string;
 

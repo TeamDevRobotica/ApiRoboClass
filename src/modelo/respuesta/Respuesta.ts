@@ -1,12 +1,10 @@
 import { Entity, ManyToOne, PrimaryGeneratedColumn, Column } from "typeorm";
 import { Cursado } from "../cursado/Cursado";
 import { PosibleRespuesta } from "../posibleRespuesta/PosibleRespuesta";
+import { Identidad } from "../comun/Identidad";
 
 @Entity()
-export class Respuesta {
-    @PrimaryGeneratedColumn()
-    id: number;
-
+export class Respuesta extends Identidad{
     @Column()
     descripcion: string;
 
