@@ -7,6 +7,9 @@ export class Cursado {
     @PrimaryGeneratedColumn()
     id: number;
 
+    @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+    fechaInscripcion: Date;
+
     @ManyToOne(type => Estudiante, estudiante => estudiante.cursado, {cascade:true})
     estudiante: Estudiante;
 

@@ -1,5 +1,5 @@
 import { Persona } from "../persona/Persona";
-import { Entity, OneToMany, ManyToOne } from "typeorm";
+import { Entity, OneToMany } from "typeorm";
 import { Cursado } from "../cursado/Cursado";
 
 @Entity()
