@@ -17,7 +17,7 @@ export class PreguntaControlador {
         return this.preguntaRepositorio.findOne(id);
     }
 
-    @Post("/cursado")
+    @Post("/pregunta")
     post(@Body() pregunta: any) {
         return this.preguntaRepositorio.save(pregunta);
     }
