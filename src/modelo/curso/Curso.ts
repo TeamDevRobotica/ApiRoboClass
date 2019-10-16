@@ -1,6 +1,6 @@
 import { Entity, OneToMany, ManyToOne, PrimaryGeneratedColumn, Column } from "typeorm";
-import { Cursado } from "../cursado/Cursado";
 import { CursoCreado } from "../cursoCreado/CursoCreado";
+import { Division } from "../division/Division";
 
 @Entity()
 export class Curso {
@@ -10,8 +10,8 @@ export class Curso {
     @Column()
     descripcion: string;
 
-    //@ManyToOne(type => Docente, docente => docente.cursosCreados, {cascade:true})
-    //docente: Docente; //Docente que crea el curso
+    @ManyToOne(type => Division, division => division.cursos, {cascade:true})
+    division: Division; //Docente que crea el curso
 
     @OneToMany(type => CursoCreado, cursosCreados => cursosCreados.curso)
     cursosCreados: CursoCreado[];
