@@ -15,5 +15,4 @@ export class CursoCreado {
 
     @OneToMany(type => Cursado, cursados => cursados.cursoCreado)
     cursados: Cursado[];
-
 }

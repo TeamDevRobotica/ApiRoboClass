@@ -5,5 +5,5 @@ import { Cursado } from "../cursado/Cursado";
 @Entity()
 export class Estudiante extends Persona {
     @OneToMany(type => Cursado, cursados => cursados.estudiante)
-    cursados: Cursado[];
+    cursados: Cursado[]; //lista de cursados del estudiante
 }

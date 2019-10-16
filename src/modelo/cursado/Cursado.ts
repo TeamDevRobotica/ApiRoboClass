@@ -1,6 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from "typeorm";
 import { Estudiante } from "../estudiante/Estudiante";
 import { CursoCreado } from "../cursoCreado/CursoCreado";
+import { Respuesta } from "../respuesta/Respuesta";
 
 
 @Entity()
@@ -16,4 +17,7 @@ export class Cursado {
 
     @ManyToOne(type => CursoCreado, cursoCreado => cursoCreado.cursados)
     cursoCreado: CursoCreado;
+
+    @OneToMany(type => Respuesta, respuestas => respuestas.cursado)
+    respuestas: Respuesta[]; //lista de respuestas por cursado del estudiante
 }
