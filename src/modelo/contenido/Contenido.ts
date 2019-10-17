@@ -8,6 +8,9 @@ import { Docente } from "../docente/Docente";
 @Entity()
 export class Contenido extends Identidad {
     @Column()
+    titulo: string;
+
+    @Column()
     contenido: string;
 
     @Column()
