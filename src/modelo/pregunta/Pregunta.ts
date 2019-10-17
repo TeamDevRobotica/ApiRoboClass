@@ -2,6 +2,7 @@ import { Entity, OneToMany, ManyToOne, PrimaryGeneratedColumn, Column } from "ty
 import { Identidad } from "../comun/Identidad";
 import { PosibleRespuesta } from "../posibleRespuesta/PosibleRespuesta";
 import { Nivel } from "../nivel/Nivel";
+import { Contenido } from "../contenido/Contenido";
 
 @Entity()
 export class Pregunta extends Identidad{
@@ -13,4 +14,7 @@ export class Pregunta extends Identidad{
 
     @ManyToOne(type => Nivel, nivel => nivel.preguntas, {cascade:true})
     nivel: Nivel; //
+
+    @ManyToOne(type => Contenido, contenido => contenido.preguntas, {cascade:true})
+    contenido: Contenido; //
 }
