@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { PrimaryGeneratedColumn, Column } from "typeorm";
 
 /**
  * Esta clase abstracta se utiliza para que hereden sus propiedades en comun

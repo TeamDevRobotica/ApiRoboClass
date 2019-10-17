@@ -1,5 +1,5 @@
-import { Persona } from "../persona/Persona";
 import { Entity, OneToMany, ManyToOne } from "typeorm";
+import { Persona } from "../persona/Persona";
 import { Institucion } from "../comun/Institucion";
 import { CursoCreado } from "../cursoCreado/CursoCreado";
 import { Contenido } from "../contenido/Contenido";
