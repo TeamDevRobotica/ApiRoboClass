@@ -18,8 +18,8 @@ export class PosibleRespuestaControlador {
     }
 
     @Post("/posibleRespuesta")
-    post(@Body() cursado: any) {
-        return this.posibleRespuestaRepositorio.save(cursado);
+    post(@Body() posibleRespuesta: any) {
+        return this.posibleRespuestaRepositorio.save(posibleRespuesta);
     }
 
     @Put("/posibleRespuesta/:id")

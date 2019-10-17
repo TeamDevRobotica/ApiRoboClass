@@ -3,31 +3,31 @@ import { getRepository } from "typeorm";
 import { Usuario } from "../modelo/comun/Usuario";
 
 @JsonController()
-export class EstudianteControlador {
+export class usuarioControlador {
 
     private usuarioRepositorio = getRepository(Usuario);
 
-    @Get("/estudiante")
+    @Get("/usuario")
     getAll() {
         return this.usuarioRepositorio.find();
     }
 
-    @Get("/estudiante/:id")
+    @Get("/usuario/:id")
     getOne(@Param("id") id: number) {
         return this.usuarioRepositorio.findOne(id);
     }
 
-    @Post("/estudiante")
+    @Post("/usuario")
     post(@Body() usuario: any) {
         return this.usuarioRepositorio.save(usuario);
     }
 
-    @Put("/estudiante/:id")
+    @Put("/usuario/:id")
     put(@Param("id") id: number, @Body() usuario: any) {
         return /* this.usuarioRepositorio.updateById(id, usuario) */;
     }
 
-    @Delete("/estudiante/:id")
+    @Delete("/usuario/:id")
     async remove(@Param("id") id: number) {
         let usuario = await this.usuarioRepositorio.findOne(id);
         return this.usuarioRepositorio.remove(usuario);
