@@ -2,6 +2,7 @@ import { Persona } from "../persona/Persona";
 import { Entity, OneToMany, ManyToOne } from "typeorm";
 import { Institucion } from "../comun/Institucion";
 import { CursoCreado } from "../cursoCreado/CursoCreado";
+import { Contenido } from "../contenido/Contenido";
 
 @Entity()
 export class Docente extends Persona {
@@ -11,6 +12,6 @@ export class Docente extends Persona {
     @OneToMany(type => CursoCreado, cursosCreados => cursosCreados.docente)
     cursosCreados: CursoCreado[]; //lista de cursos creados por el docente
     
-    //@OneToMany(type => Docente, docentes => docentes.institucion)
-    //docentes: Docente[];
+    @OneToMany(type => Contenido, contenidos => contenidos.docente)
+    contenidos: Contenido[];
 }
