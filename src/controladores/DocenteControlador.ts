@@ -9,7 +9,7 @@ export class DocenteControlador {
 
     @Get("/docente")
     getAll() {
-        return this.docenteRepositorio.find();
+        return this.docenteRepositorio.find({ relations: ['usuario'] });
     }
 
     @Get("/docente/:id")
@@ -19,6 +19,7 @@ export class DocenteControlador {
 
     @Post("/docente")
     post(@Body() docente: any) {
+        console.log(docente);
         return this.docenteRepositorio.save(docente);
     }
 
@@ -32,5 +33,6 @@ export class DocenteControlador {
         let docente = await this.docenteRepositorio.findOne(id);
         return this.docenteRepositorio.remove(docente);
     }
+
 
 }
