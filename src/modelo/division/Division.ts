@@ -8,5 +8,5 @@ export class Division extends Identidad {
     descripcion: string;
     
     @OneToMany(type => Curso, cursos => cursos.division)
-    cursos: Curso[];
+    cursos: Curso[]; // Una Division tiene muchas Divisiones
 }

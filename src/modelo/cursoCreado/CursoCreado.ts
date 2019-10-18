@@ -11,14 +11,14 @@ export class CursoCreado extends Identidad{
     descripcion: string;
 
     @ManyToOne(type => Docente, docente => docente.cursosCreados, {cascade:true})
-    docente: Docente; //Docente que crea el curso
+    docente: Docente; // Un CursoCreado pertenece a un Docente
 
     @ManyToOne(type => Curso, curso => curso.cursosCreados, {cascade:true})
-    curso: Curso; //
+    curso: Curso; // Un CursoCreado pertenece a un Curso
 
     @ManyToOne(type => Contenido, contenido => contenido.cursosCreados, {cascade:true})
-    contenido: Contenido; //
+    contenido: Contenido; // Un CursoCreado pertenece a un Contenido
 
     @OneToMany(type => Cursado, cursados => cursados.cursoCreado)
-    cursados: Cursado[];
+    cursados: Cursado[]; // Un CursoCreado tiene muchos Cursados
 }

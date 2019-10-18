@@ -12,8 +12,8 @@ export class PosibleRespuesta extends Identidad{
     estado: boolean;
 
     @OneToMany(type => Respuesta, respuestas => respuestas.posibleRespuesta)
-    respuestas: Respuesta[]; //lista de respuestas relacionadas con una PosiblesResuesta 
+    respuestas: Respuesta[]; // Una PosibleRespuesta tiene muchas Respuestas
 
     @ManyToOne(type => Pregunta, pregunta => pregunta.posiblesRespuestas, {cascade:true})
-    pregunta: Pregunta; //una Respuesta relacionada a un Cursado de un estudiante
+    pregunta: Pregunta; // Una PosibleRespuesta pertenece a una Pregunta
 }

@@ -8,5 +8,5 @@ export class Tema extends Identidad {
     titulo: string;
     
     @OneToMany(type => Contenido, contenidos => contenidos.tema)
-    contenidos: Contenido[];
+    contenidos: Contenido[]; // Un Tema tiene muchos Contenidos
 }

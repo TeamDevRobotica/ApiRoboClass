@@ -17,14 +17,14 @@ export class Contenido extends Identidad {
     estado: boolean;
     
     @OneToMany(type => CursoCreado, cursosCreados => cursosCreados.contenido)
-    cursosCreados: CursoCreado[];
+    cursosCreados: CursoCreado[]; // Un Contenido tiene muchos CursosCreados
 
     @OneToMany(type => Pregunta, preguntas => preguntas.contenido)
-    preguntas: Pregunta[];
+    preguntas: Pregunta[]; // Un Contenido tiene muchas Preguntas
 
     @ManyToOne(type => Tema, tema => tema.contenidos, {cascade:true})
-    tema: Tema; //
+    tema: Tema; // Un Contenido pertenece a un Tema
 
     @ManyToOne(type => Docente, docente => docente.contenidos, {cascade:true})
-    docente: Docente; //
+    docente: Docente; // Un Contenido pertenece a un Docente
 }

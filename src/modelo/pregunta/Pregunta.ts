@@ -10,11 +10,11 @@ export class Pregunta extends Identidad{
     descripcion: string;
 
     @OneToMany(type => PosibleRespuesta, posiblesRespuestas => posiblesRespuestas.pregunta)
-    posiblesRespuestas: PosibleRespuesta[]; //
+    posiblesRespuestas: PosibleRespuesta[]; // Una Pregunta tiene muchas PosiblesRespuestas
 
     @ManyToOne(type => Nivel, nivel => nivel.preguntas, {cascade:true})
-    nivel: Nivel; //
+    nivel: Nivel; // Una Pregunta pretenece a un Nivel
 
     @ManyToOne(type => Contenido, contenido => contenido.preguntas, {cascade:true})
-    contenido: Contenido; //
+    contenido: Contenido; // Una Pregunta pretenece a un Contenido
 }

@@ -9,8 +9,8 @@ export class Curso extends Identidad{
     descripcion: string;
 
     @ManyToOne(type => Division, division => division.cursos, {cascade:true})
-    division: Division; //Docente que crea el curso
+    division: Division; // Un Curso pertenece a una Division
 
     @OneToMany(type => CursoCreado, cursosCreados => cursosCreados.curso)
-    cursosCreados: CursoCreado[];
+    cursosCreados: CursoCreado[]; // Un Curso tiene muchos CursosCreados
 }

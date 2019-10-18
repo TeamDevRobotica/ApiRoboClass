@@ -7,11 +7,11 @@ import { Identidad } from "../comun/Identidad";
 @Entity()
 export class Cursado extends Identidad{
     @ManyToOne(type => Estudiante, estudiante => estudiante.cursados, {cascade:true})
-    estudiante: Estudiante;
+    estudiante: Estudiante; // Un Cursado pertenece a un Estudiante
 
     @ManyToOne(type => CursoCreado, cursoCreado => cursoCreado.cursados)
-    cursoCreado: CursoCreado;
+    cursoCreado: CursoCreado; // Un Cursado pertenece a un CursoCreado
 
     @OneToMany(type => Respuesta, respuestas => respuestas.cursado)
-    respuestas: Respuesta[]; //lista de respuestas por cursado del estudiante
+    respuestas: Respuesta[]; // un Cursado tiene muchas Respuestas
 }

@@ -7,5 +7,5 @@ export class Nivel extends Identidad {
     descripcion: string;
     
     @OneToMany(type => Pregunta, preguntas => preguntas.nivel)
-    preguntas: Pregunta[];
+    preguntas: Pregunta[]; // Un Nivel tiene muchas Preguntas 
 }

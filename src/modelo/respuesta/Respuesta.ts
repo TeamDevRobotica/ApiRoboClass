@@ -9,8 +9,8 @@ export class Respuesta extends Identidad{
     descripcion: string;
 
     @ManyToOne(type => Cursado, cursado => cursado.respuestas, {cascade:true})
-    cursado: Cursado; //una Respuesta relacionada a un Cursado de un estudiante
+    cursado: Cursado; // Una Respuesta pertenece a un Cursado
 
     @ManyToOne(type => PosibleRespuesta, posibleRespuesta => posibleRespuesta.respuestas, {cascade:true})
-    posibleRespuesta: PosibleRespuesta; //una Respuesta relacionada a un Cursado de un estudiante
+    posibleRespuesta: PosibleRespuesta; // Una Respuesta pertenece a una PosibleRespuesta
 }

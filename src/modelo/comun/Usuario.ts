@@ -1,5 +1,6 @@
-import { Entity, Column } from "typeorm";
+import { Entity, Column, ManyToOne } from "typeorm";
 import { Identidad } from "./Identidad";
+import { Grupo } from "../grupo/Grupo";
 
 @Entity()
 export class Usuario extends Identidad {
@@ -9,7 +10,6 @@ export class Usuario extends Identidad {
     @Column()
     clave: string;
 
-    // @OneToOne(type => Grupo, {cascade: true}) //cascada: cuando guardemos una Usuario
-    // @JoinColumn()                             //automaticamente debe guardar el grupo al que pertenece
-    // grupo: Grupo;
+    @ManyToOne(type => Grupo, grupo => grupo.usuarios, { cascade: true })
+    grupo: Grupo; //Un Usuario tiene un Grupo
 }

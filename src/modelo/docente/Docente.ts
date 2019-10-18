@@ -7,11 +7,11 @@ import { Contenido } from "../contenido/Contenido";
 @Entity()
 export class Docente extends Persona {
     @ManyToOne(type => Institucion, institucion => institucion.docentes, { cascade: true })
-    institucion: Institucion; //institucion al que pertenece un docente
+    institucion: Institucion; // Un Docente pertenece a una Institucion (En esta version de la App)
 
     @OneToMany(type => CursoCreado, cursosCreados => cursosCreados.docente)
-    cursosCreados: CursoCreado[]; //lista de cursos creados por el docente
+    cursosCreados: CursoCreado[]; // Un Docente tiene muchos CursosCreados
     
     @OneToMany(type => Contenido, contenidos => contenidos.docente)
-    contenidos: Contenido[];
+    contenidos: Contenido[]; // Un Docente tiene muchos Contenidos
 }

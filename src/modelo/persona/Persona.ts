@@ -16,7 +16,7 @@ export abstract class Persona extends Identidad {
     @Column({ unique: true })
     dni: number;
 
-    @OneToOne(type => Usuario, {cascade: true}) //cascada: cuando guardemos una Persona
-    @JoinColumn()                             //automaticamente debe guardar el usuario relacionado
+    @OneToOne(type => Usuario, {cascade: true}) // cascada: cuando guardemos una Persona automaticamente debe guardar el usuario relacionado
+    @JoinColumn()                               // OneToOne una Persona tiene un Usuario
     usuario: Usuario;
 }

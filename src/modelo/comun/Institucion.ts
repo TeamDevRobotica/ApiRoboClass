@@ -11,5 +11,5 @@ export class Institucion extends Identidad {
     cue: string;
 
     @OneToMany(type => Docente, docentes => docentes.institucion)
-    docentes: Docente[];
+    docentes: Docente[]; // Una Institucion tiene muchos Docentes
 }
