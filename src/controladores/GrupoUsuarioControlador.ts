@@ -1,11 +1,11 @@
 import { JsonController, Param, Body, Get, Post, Put, Delete } from "routing-controllers";
 import { getRepository } from "typeorm";
-import { Grupo } from "../modelo/grupo/Grupo";
+import { GrupoUsuario } from "../modelo/grupoUsuario/GrupoUsuario";
 
 @JsonController()
-export class GrupoControlador {
+export class GrupoUsuarioControlador {
 
-    private grupoRepositorio = getRepository(Grupo);
+    private grupoRepositorio = getRepository(GrupoUsuario);
 
     @Get("/grupo")
     getAll() {
@@ -32,5 +32,4 @@ export class GrupoControlador {
         let grupo = await this.grupoRepositorio.findOne(id);
         return this.grupoRepositorio.remove(grupo);
     }
-
 }

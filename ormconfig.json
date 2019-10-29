@@ -3,7 +3,7 @@
    "host": "localhost",
    "port": 3306,
    "username": "root",
-   "password": "1rvtq9b9",
+   "password": "root",
    "database": "roboClass",
    "synchronize": true,
    "logging": false,

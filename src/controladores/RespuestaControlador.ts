@@ -1,35 +1,35 @@
 import { JsonController, Param, Body, Get, Post, Put, Delete } from "routing-controllers";
 import { getRepository } from "typeorm";
-import { Respuesta } from "../modelo/respuesta/Respuesta";
+import { RespuestaAlumno } from "../modelo/respuestaAlumno/RespuestaAlumno";
 
 @JsonController()
-export class RespuestaControlador {
+export class RespuestaAlumnoControlador {
 
-    private respuestaRepositorio = getRepository(Respuesta);
+    private respuestaAlumnoRepositorio = getRepository(RespuestaAlumno);
 
-    @Get("/respuesta")
+    @Get("/respuestaAlumno")
     getAll() {
-        return this.respuestaRepositorio.find();
+        return this.respuestaAlumnoRepositorio.find();
     }
 
-    @Get("/respuesta/:id")
+    @Get("/respuestaAlumno/:id")
     getOne(@Param("id") id: number) {
-        return this.respuestaRepositorio.findOne(id);
+        return this.respuestaAlumnoRepositorio.findOne(id);
     }
 
-    @Post("/respuesta")
-    post(@Body() respuesta: any) {
-        return this.respuestaRepositorio.save(respuesta);
+    @Post("/respuestaAlumno")
+    post(@Body() respuestaAlumno: any) {
+        return this.respuestaAlumnoRepositorio.save(respuestaAlumno);
     }
 
-    @Put("/respuesta/:id")
-    put(@Param("id") id: number, @Body() respuesta: any) {
+    @Put("/respuestaAlumno/:id")
+    put(@Param("id") id: number, @Body() respuestaAlumno: any) {
         return /* this.docenteRepositorio.updateById(id, docente)*/;
     }
 
-    @Delete("/respuesta/:id")
+    @Delete("/respuestaAlumno/:id")
     async remove(@Param("id") id: number) {
-        let respuesta = await this.respuestaRepositorio.findOne(id);
-        return this.respuestaRepositorio.remove(respuesta);
+        let respuestaAlumno = await this.respuestaAlumnoRepositorio.findOne(id);
+        return this.respuestaAlumnoRepositorio.remove(respuestaAlumno);
     }
 }

@@ -3,10 +3,10 @@ import { Identidad } from "../comun/Identidad";
 import { Contenido } from "../contenido/Contenido";
 
 @Entity()
-export class Tema extends Identidad {
+export class TemaContenido extends Identidad {
     @Column()
     titulo: string;
     
-    @OneToMany(type => Contenido, contenidos => contenidos.tema)
+    @OneToMany(type => Contenido, contenidos => contenidos.temaContenido)
     contenidos: Contenido[]; // Un Tema tiene muchos Contenidos
 }

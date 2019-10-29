@@ -1,35 +1,35 @@
 import { JsonController, Param, Body, Get, Post, Put, Delete } from "routing-controllers";
 import { getRepository } from "typeorm";
-import { Tema } from "../modelo/tema/Tema";
+import { TemaContenido } from "../modelo/temaContenido/TemaContenido";
 
 @JsonController()
-export class TemaControlador {
+export class TemaContenidoControlador {
 
-    private temaRepositorio = getRepository(Tema);
+    private temaContenidoRepositorio = getRepository(TemaContenido);
 
-    @Get("/tema")
+    @Get("/temaContenido")
     getAll() {
-        return this.temaRepositorio.find();
+        return this.temaContenidoRepositorio.find();
     }
 
-    @Get("/tema/:id")
+    @Get("/temaContenido/:id")
     getOne(@Param("id") id: number) {
-        return this.temaRepositorio.findOne(id);
+        return this.temaContenidoRepositorio.findOne(id);
     }
 
-    @Post("/tema")
-    post(@Body() tema: any) {
-        return this.temaRepositorio.save(tema);
+    @Post("/temaContenido")
+    post(@Body() temaContenido: any) {
+        return this.temaContenidoRepositorio.save(temaContenido);
     }
 
-    @Put("/tema/:id")
-    put(@Param("id") id: number, @Body() tema: any) {
+    @Put("/temaContenido/:id")
+    put(@Param("id") id: number, @Body() temaContenido: any) {
         return /* this.docenteRepositorio.updateById(id, docente)*/;
     }
 
-    @Delete("/tema/:id")
+    @Delete("/temaContenido/:id")
     async remove(@Param("id") id: number) {
-        let tema = await this.temaRepositorio.findOne(id);
-        return this.temaRepositorio.remove(tema);
+        let temaContenido = await this.temaContenidoRepositorio.findOne(id);
+        return this.temaContenidoRepositorio.remove(temaContenido);
     }
 }

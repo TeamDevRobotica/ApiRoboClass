@@ -3,10 +3,10 @@ import { Identidad } from "../comun/Identidad";
 import { Usuario } from "../comun/Usuario";
 
 @Entity()
-export class Grupo extends Identidad{
+export class GrupoUsuario extends Identidad{
     @Column()
     nombre: string;
 
-    @OneToMany(type => Usuario, usuarios => usuarios.grupo)
+    @OneToMany(type => Usuario, usuarios => usuarios.grupoUsuario)
     usuarios: Usuario[]; //Un Grupo tiene muchos Usuarios
 }

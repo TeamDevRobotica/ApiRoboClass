@@ -1,7 +1,7 @@
 import { Entity, ManyToOne, OneToMany } from "typeorm";
 import { Estudiante } from "../estudiante/Estudiante";
 import { CursoCreado } from "../cursoCreado/CursoCreado";
-import { Respuesta } from "../respuesta/Respuesta";
+import { RespuestaAlumno } from "../respuestaAlumno/RespuestaAlumno";
 import { Identidad } from "../comun/Identidad";
 
 @Entity()
@@ -12,6 +12,6 @@ export class Cursado extends Identidad{
     @ManyToOne(type => CursoCreado, cursoCreado => cursoCreado.cursados)
     cursoCreado: CursoCreado; // Un Cursado pertenece a un CursoCreado
 
-    @OneToMany(type => Respuesta, respuestas => respuestas.cursado)
-    respuestas: Respuesta[]; // un Cursado tiene muchas Respuestas
+    @OneToMany(type => RespuestaAlumno, respuestasAlumno => respuestasAlumno.cursado)
+    respuestasAlumno: RespuestaAlumno[]; // un Cursado tiene muchas Respuestas
 }

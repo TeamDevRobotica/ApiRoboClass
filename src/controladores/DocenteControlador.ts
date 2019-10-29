@@ -19,6 +19,7 @@ export class DocenteControlador {
 
     @Post("/docente")
     post(@Body() docente: any) {
+        console.log(docente);
         return this.docenteRepositorio.save(docente);
     }
 
