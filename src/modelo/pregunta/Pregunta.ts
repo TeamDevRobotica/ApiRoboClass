@@ -13,7 +13,8 @@ export class Pregunta extends Identidad {
     @Column()
     orden: number;
 
-    @OneToMany(type => PosibleRespuesta, posiblesRespuestas => posiblesRespuestas.pregunta)
+    @OneToMany(type => PosibleRespuesta, posiblesRespuestas => posiblesRespuestas.pregunta,
+        {cascade:true})
     posiblesRespuestas: PosibleRespuesta[];
 
     @ManyToOne(type => NivelPregunta, nivelPregunta => nivelPregunta.preguntas, { cascade: true })

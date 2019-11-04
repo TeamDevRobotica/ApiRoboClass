@@ -12,7 +12,7 @@ export class PosibleRespuesta extends Identidad {
     @Column()
     correcta: boolean;
 
-    @ManyToOne(type => Pregunta, pregunta => pregunta.posiblesRespuestas, { cascade: true })
+    @ManyToOne(type => Pregunta, pregunta => pregunta.posiblesRespuestas/*, { cascade: true }*/)
     pregunta: Pregunta;
 
     @OneToMany(type => RespuestaAlumno, respuestasAlumnos => respuestasAlumnos.posibleRespuesta)

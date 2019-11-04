@@ -24,7 +24,7 @@ export class UsuarioControlador {
 
     @Put("/usuario/:id")
     put(@Param("id") id: number, @Body() usuario: any) {
-        return /* this.usuarioRepositorio.updateById(id, usuario)*/;
+        return this.usuarioRepositorio.update(id, usuario);
     }
 
     @Delete("/usuario/:id")

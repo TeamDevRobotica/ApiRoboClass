@@ -9,7 +9,8 @@ export class CursoControlador {
 
     @Get("/curso")
     getAll() {
-        return this.cursoRepositorio.find();
+        //return this.cursoRepositorio.find({ relations: ['division']});
+        return this.cursoRepositorio.query(`SELECT DISTINCT *,c.descripcion FROM roboClass.curso c;`);
     }
 
     @Get("/curso/:id")
@@ -24,7 +25,7 @@ export class CursoControlador {
 
     @Put("/curso/:id")
     put(@Param("id") id: number, @Body() curso: any) {
-        return /* this.cursoRepositorio.updateById(id, curso)*/;
+        return this.cursoRepositorio.update(id, curso);
     }
 
     @Delete("/curso/:id")

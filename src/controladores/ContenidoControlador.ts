@@ -20,6 +20,7 @@ export class ContenidoControlador {
 
     @Post("/contenido")
     post(@Body() contenido: any) {
+        //console.log(contenido);
         return this.contenidoRepositorio.save(contenido);
     }
 
@@ -33,5 +34,4 @@ export class ContenidoControlador {
         let contenido = await this.contenidoRepositorio.findOne(id);
         return this.contenidoRepositorio.remove(contenido);
     }
-
 }

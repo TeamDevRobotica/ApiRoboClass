@@ -6,7 +6,7 @@
    "password": "root",
    "database": "roboClass",
    "synchronize": true,
-   "logging": true,
+   "logging": false,
    "entities": [
       "src/modelo/**/*.ts"
    ],

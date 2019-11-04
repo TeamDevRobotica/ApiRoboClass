@@ -10,5 +10,4 @@ export class TemaContenido extends Identidad {
 
     @OneToMany(type => Contenido, contenidos => contenidos.tema)
     contenidos: Contenido[];
-
 }

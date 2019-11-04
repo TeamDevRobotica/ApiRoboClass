@@ -11,13 +11,13 @@ export class Contenido extends Identidad {
     @Column()
     titulo: string;
 
-    @Column()
+    @Column({default : null})
     contenido: string;
 
-    @Column()
+    @Column({default : null})
     codigoContenido: string;
 
-    @Column()
+    @Column({default : null})
     publico: boolean;
 
     @ManyToOne(type => TemaContenido, tema => tema.contenidos, { cascade: true })
